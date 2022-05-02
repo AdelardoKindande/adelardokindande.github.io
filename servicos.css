@@ -1,0 +1,50 @@
+@charset "utf-8";
+@font-face{ font-family: 'fonte';
+    src: url("../_fontes/Winter\ Creative.ttf");
+}
+
+@font-face{ font-family: 'pc';
+    src: url("../_fontes/computer-font.ttf");
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+section div{
+    display: block;
+    margin-top: 45px;
+    margin-left: 35px;
+    margin-bottom: 800px;
+    width: 80%;
+    height: 650px;
+    background-color: rgba(0, 0, 5, 0.432);
+}
+
+
+
+h1#webpag{
+    position: relative;
+    margin-left: 400px; 
+    margin-top: -300px;
+    color: #0084ff;
+    font-size: 50px;
+    font-family: 'pc';
+}
+
+p#webpag{
+    text-indent: 6%;
+    text-align: justify;
+    margin-top: -40px;
+    margin-left: 350px;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    
+    
+
+}
+
+
+
+

@@ -1,0 +1,116 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta author="FelizanderStudents">
+	<link rel="stylesheet" href="estilo.css">
+	<link rel="stylesheet" href="app.css">
+	<link rel="stylesheet" href="sobre.css">
+	<title>sobre</title>
+	
+	<header>
+		<script>
+			var imgs=[];
+			var slider;
+			var imgAtual;
+			var maxImg;
+			var tmp;
+			var tempoTroca;
+
+			function preCarregamento(){
+				var s=1;
+				for(var i=0;i<3;i++){
+				imgs[i]=new Image();
+				imgs[i].src="imgs/s"+s+".jpg";
+				s++;
+			 } 
+			}
+
+			function carregarImg(img){
+				slider.style.backgroundImage="url('"+imgs[img].src+"')";
+			}
+
+			function inicia(){
+				preCarregamento();
+				imgAtual=0;
+				maxImg=imgs.length-1;
+				slider= document.getElementById("dvslider");
+				carregarImg(imgAtual);
+				tempoTroca=4000;
+				tmp=setInterval(troca,tempoTroca);
+			}
+
+			function troca(){
+				imgAtual++;
+				if(imgAtual>maxImg){
+					imgAtual=0;
+
+				}	
+				carregarImg(imgAtual);	
+				
+			}
+
+			window.addEventListener("load",inicia);
+
+
+		</script>
+		
+		
+		<div class="hamburguer">
+			<div class="line" id="line1"></div>
+			<div class="line" id="line2"></div>
+			<div class="line" id="line3"></div>
+		</div>
+		<nav class="menuprincipal">
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="app.html">APLICATIVOS</a></li>
+				<li><a href="sobre.html">AJUDA/SOBRE</a></li>
+			</ul>
+		</nav>
+		<input type="text" id="busca">
+		<button class="pesquisar">BUSCA</button>		
+		
+		<div id="dvslider">
+			
+		</div>
+	
+	<div class="sidebar">
+	<nav >
+		<ul class="menu">
+		<li class="menu-itens"><a href="index.html">HOME</a></li>
+		<li class="menu-itens"><a href="app.html">APLICATIVOS</a></li>
+		<li class="menu-itens"><a href="sobre.html">SOBRE</a></li>
+		</ul>
+		</nav>
+	</div>
+
+		
+	</header>
+</head>
+<body>
+
+	<div id="corpo">
+		<h1 id="nomesite">APRENDONAUTA</h1>
+	<P>Este web site foi feito como um esperimento para o github, um teste feito pelo programador para ver como o site se comporta na
+	na internet Para dar a sua opinião ou contributo por favor envie-a para o meu correio Electrónico que eu respondo-o(a)
+	</P>
+	
+	<form  method="POST" action="mailto:adelardokindande@gmail.com ">
+		<textarea name="mensagem" id="texto" cols="40" rows="8" placeholder="Enviar mensagem"></textarea>
+	<button id="botao" type="submit">Enviar</button>
+</form>
+	
+	
+	<footer class="rodape"> <!-- area do rodapé -->
+	<br>
+	<p>&copy;Copyright 2022 Todos Direitos Reservados |By: <strong>Adelardo Daniel Kindande</strong> </p>
+	
+	</footer>
+</div>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,130 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta author="FelizanderStudents">
+	<link rel="stylesheet" href="estilo.css">
+	<link rel="stylesheet" href="app.css">
+	<title>Pagina Inicial</title>
+	
+	<header>
+		<script>
+			var imgs=[];
+			var slider;
+			var imgAtual;
+			var maxImg;
+			var tmp;
+			var tempoTroca;
+
+			function preCarregamento(){
+				var s=1;
+				for(var i=0;i<3;i++){
+				imgs[i]=new Image();
+				imgs[i].src="imgs/s"+s+".jpg";
+				s++;
+			 } 
+			}
+
+			function carregarImg(img){
+				slider.style.backgroundImage="url('"+imgs[img].src+"')";
+			}
+
+			function inicia(){
+				preCarregamento();
+				imgAtual=0;
+				maxImg=imgs.length-1;
+				slider= document.getElementById("dvslider");
+				carregarImg(imgAtual);
+				tempoTroca=4000;
+				tmp=setInterval(troca,tempoTroca);
+			}
+
+			function troca(){
+				imgAtual++;
+				if(imgAtual>maxImg){
+					imgAtual=0;
+
+				}	
+				carregarImg(imgAtual);	
+				
+			}
+
+			window.addEventListener("load",inicia);
+
+
+		</script>
+		
+		
+		<div class="hamburguer">
+			<div class="line" id="line1"></div>
+			<div class="line" id="line2"></div>
+			<div class="line" id="line3"></div>
+		</div>
+		<nav class="menuprincipal">
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="app.html">APLICATIVOS</a></li>
+				<li><a href="sobre.html">AJUDA/SOBRE</a></li>
+			</ul>
+		</nav>
+		<input type="text" id="busca">
+		<button class="pesquisar">BUSCA</button>		
+		
+		<div id="dvslider">
+			
+		</div>
+	
+	<div class="sidebar">
+	<nav >
+		<ul class="menu">
+		<li class="menu-itens"><a href="index.html">HOME</a></li>
+		<li class="menu-itens"><a href="app.html">APLICATIVOS</a></li>
+		<li class="menu-itens"><a href="sobre.html">SOBRE</a></li>
+		</ul>
+		</nav>
+	</div>
+
+		
+	</header>
+</head>
+<body>
+    <div id="area_principal">
+        <section class="app">
+			<div class="mapp">
+				<img src="bat.png" alt="ap">
+				<h1>Bat To Exe converter</h1>
+				<p>Conversor de script de bat para exe </p>
+				<p id="do">Download: 3 MB | Arquivo: .rar</p>
+				 <a download="Bat_To_Exe_Converter_x64.rar" href="Bat_To_Exe_Converter_x64.rar" type="application/rar"><button class="baixar">BAIXAR</button></a>
+			</div>
+			
+			<div class="mapp">
+				<img src="network alt.png" alt="ap">
+				<h1>ALPHA ADELARDO</h1>
+				<p>Aplicação Auxiliar do Windows </p>
+				<p id="do">Download: 141 KB | Arquivo: .rar</p>
+			    <a download="alpha.rar" href="alpha.rar" type="application/rar"><button class="baixar">BAIXAR</button></a>
+			</div>
+
+			<div class="mapp">
+				<img src="Chorme.png" alt="ap">
+				<h1>Google Hacking</h1>
+				<p>Códigos de google hacking </p>
+				<p id="do">Download: 4.00 KB | Arquivo: .rar</p>
+				<a download="hacking.rar" href="hacking.rar" type="application/rar"><button class="baixar"> BAIXAR</button></a>
+			</div>
+
+			<div class="mapp">
+				<img src="AirPort Utility.png" alt="ap">
+				<h1>WIFI FINDER </h1>
+				<p>Conversor de script de bat para exe </p>
+				<p id="do">Download: 3 MB | Arquivo .rar</p>
+				<a download="WIFI FINDER.rar" href="WIFI FINDER.rar" type="application/rar"><button class="baixar"> BAIXAR </button></a>
+			</div>
+
+        </section>
+
+    </div>
+</body>
+<script src="_javascript/script.js"></script>
+</html>

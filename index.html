@@ -1,0 +1,147 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta author="FelizanderStudents">
+	<link rel="stylesheet" href="estilo.css">
+	<link rel="stylesheet" href="app.css">
+	<title>Pagina Inicial</title>
+	
+	<header>
+		<script>
+			var imgs=[];
+			var slider;
+			var imgAtual;
+			var maxImg;
+			var tmp;
+			var tempoTroca;
+
+			function preCarregamento(){
+				var s=1;
+				for(var i=0;i<3;i++){
+				imgs[i]=new Image();
+				imgs[i].src="imgs/s"+s+".jpg";
+				s++;
+			 } 
+			}
+
+			function carregarImg(img){
+				slider.style.backgroundImage="url('"+imgs[img].src+"')";
+			}
+
+			function inicia(){
+				preCarregamento();
+				imgAtual=0;
+				maxImg=imgs.length-1;
+				slider= document.getElementById("dvslider");
+				carregarImg(imgAtual);
+				tempoTroca=6000;
+				tmp=setInterval(troca,tempoTroca);
+			}
+
+			function troca(){
+				imgAtual++;
+				if(imgAtual>maxImg){
+					imgAtual=0;
+
+				}	
+				carregarImg(imgAtual);	
+				
+			}
+
+			window.addEventListener("load",inicia);
+
+
+		</script>
+		
+		
+		<div class="hamburguer">
+			<div class="line" id="line1"></div>
+			<div class="line" id="line2"></div>
+			<div class="line" id="line3"></div>
+		</div>
+		<nav class="menuprincipal">
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="app.html">APLICATIVOS</a></li>
+				<li><a href="sobre.html">AJUDA/SOBRE</a></li>
+			</ul>
+		</nav>
+		<input type="text" id="busca">
+		<button class="pesquisar">BUSCA</button>		
+		
+		<div id="dvslider">
+			
+		</div>
+	
+	<div class="sidebar">
+	<nav >
+		<ul class="menu">
+		<li class="menu-itens"><a href="index.html">HOME</a></li>
+		<li class="menu-itens"><a href="app.html">APLICATIVOS</a></li>
+		<li class="menu-itens"><a href="sobre.html">SOBRE</a></li>
+		</ul>
+		</nav>
+	</div>
+
+		
+	</header>
+</head>
+<body>
+	<div id="area_principal">
+	<section class="area_servicos">
+		<div class="servicos" >
+			<img src="fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg" alt="">
+			<p>
+				Criação De Paginas Web 
+						</p>
+						<button id="btn"><a href="servicos.html#pag-web">Saber mais</a></button>
+		</div>
+		<div class="servicos">
+			<img src="ScreenShot_20210529220022.png" alt="">
+			<p>
+				Cybersegurança / Pentest 
+						</p>
+			<button id="btn"><a href="servicos.html#pentest">Saber mais</a></button>
+		</div>
+		<div class="servicos">
+			<img src="Sem Título-1.jpg" alt="">
+			<p>
+				Design/Web Design e Ilustração   
+						</p>
+			<button id="btn"><a href="servicos.html#design">Saber mais</a></button>
+		</div>
+
+		
+	</section>
+
+	<section class="area_cursos">
+		<div class="cursos">
+			<img src="pexels-cottonbro-6195663.jpg" alt="">
+			<p>
+				Criação de Bases de Dados 
+						</p>
+			<button id="btn"><a href="servicos.html#bd">Saber mais</a></button>
+		</div>
+		<div class="cursos">
+			<img src="mn.png" alt="">
+			<p>
+				Exercicios de Programação 
+						</p>
+			<button id="btn"><a href="servicos.html#exercicios">Saber mais</a></button>
+		</div>
+		<div class="cursos">
+			<img src="young-woman-checking-her-phone.jpg" alt="">
+			<p>
+				Marketing Digital    
+						</p>
+			<button id="btn"><a href="servicos.html#marketing">Saber mais</a></button>
+		</div>
+	</section>
+
+</div>
+</body>
+
+<script src="script.js"></script>
+
+</html>

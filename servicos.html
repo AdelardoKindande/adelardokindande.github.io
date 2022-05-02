@@ -1,0 +1,135 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta author="FelizanderStudents">
+	<link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="servicos.css">
+	<title>Servicos</title>
+	
+	<header>
+		<script>
+			var imgs=[];
+			var slider;
+			var imgAtual;
+			var maxImg;
+			var tmp;
+			var tempoTroca;
+
+			function preCarregamento(){
+				var s=1;
+				for(var i=0;i<3;i++){
+				imgs[i]=new Image();
+				imgs[i].src="imgs/s"+s+".jpg";
+				s++;
+			 } 
+			}
+
+			function carregarImg(img){
+				slider.style.backgroundImage="url('"+imgs[img].src+"')";
+			}
+
+			function inicia(){
+				preCarregamento();
+				imgAtual=0;
+				maxImg=imgs.length-1;
+				slider= document.getElementById("dvslider");
+				carregarImg(imgAtual);
+				tempoTroca=4000;
+				tmp=setInterval(troca,tempoTroca);
+			}
+
+			function troca(){
+				imgAtual++;
+				if(imgAtual>maxImg){
+					imgAtual=0;
+
+				}	
+				carregarImg(imgAtual);	
+				
+			}
+
+			window.addEventListener("load",inicia);
+
+
+		</script>
+		
+		
+		<div class="hamburguer">
+			<div class="line" id="line1"></div>
+			<div class="line" id="line2"></div>
+			<div class="line" id="line3"></div>
+		</div>
+		<nav class="menuprincipal">
+			<ul>
+				<li><a href="index.html">HOME</a></li>
+				<li><a href="app.html">APLICATIVOS</a></li>
+				<li><a href="sobre.html">AJUDA/SOBRE</a></li>
+			</ul>
+		</nav>
+		<input type="text" id="busca">
+		<button class="pesquisar">BUSCA</button>		
+		
+		<div id="dvslider">
+			
+		</div>
+	
+	<div class="sidebar">
+	<nav >
+		<ul class="menu">
+		<li class="menu-itens"><a href="index.html">HOME</a></li>
+		<li class="menu-itens"><a href="app.html">APLICATIVOS</a></li>
+		<li class="menu-itens"><a href="sobre.html">SOBRE</a></li>
+		</ul>
+		</nav>
+	</div>
+
+		
+	</header>
+</head>
+<body>
+
+    <div id="principal">
+        <section class="area">
+            <div id="pag-web">
+				<img src="fotis-fotopoulos-LJ9KY8pIH3E-unsplash.jpg" alt="">
+				<h1 id="webpag">Criação de Paginas Web</h1>
+				<p id="webpag">hard company temos para sí os melhores serviços do ramo da tecnologia informática tais como: formatação,analise e instalação de sistemas,atualisação de drives,remoção de vírus e muito mais visite-nos pelas redes sociais, pelos nossos terminais telefonicos, ou pelos responsáveis da companhia Adelardo Kindande e Dário Gonçalo 
+				</p>
+
+                
+            </div>
+            <div id="pentest">
+				<img src="ScreenShot_20210529220022.png" alt="">
+                
+            </div>
+            <div id="design">
+                <img src="Sem Título-1.jpg" alt="">
+                
+            </div>
+    
+            
+        </section>
+    
+        <section class="cursos">
+            <div id="bd">
+                <img src="pexels-cottonbro-6195663.jpg" alt="">
+                
+            </div>
+            <div id="exercicios">
+                <img src="mn.png" alt="">
+               
+            </div>
+            <div id="marketing">
+                <img src="young-woman-checking-her-phone.jpg" alt="">
+                
+            </div>
+        </section>
+    
+    </div>
+
+
+</body>
+<script src="script.js"></script>
+</html>
